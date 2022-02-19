@@ -92,6 +92,7 @@
       <Value>../HAL/LCD</Value>
       <Value>../HAL/LED</Value>
       <Value>../MCAL/Timers</Value>
+      <Value>../APP</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -109,6 +110,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="APP\APP_1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\APP_1.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="APP\AVR_1.c">
       <SubType>compile</SubType>
     </Compile>

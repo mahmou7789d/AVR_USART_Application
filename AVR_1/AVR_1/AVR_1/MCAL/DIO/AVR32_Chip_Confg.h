@@ -13,7 +13,7 @@
 #include <STD_Types.h>
 #include <Macros_Functions.h>
 // Second, indicate the working Frequency of The AVR Chip
-#define F_CPU (16000000U)   // the working Frequency of The AVR Chip
+#define F_CPU (8000000U)   // the working Frequency of The AVR Chip
 
 #define printlog(msg)	{}    // embty code == no action taken when any error had happened 
 #define NULL   ((void *)(0X00))

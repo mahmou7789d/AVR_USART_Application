@@ -5,14 +5,14 @@
  *  Author: Mahm Oud Sa Ad
  */ 
 
-#include <USART_File.h>
-#include <LCD.h>
-#include <LED.h>
-#include <Keypad.h>
+#include <APP_1.h>
 int main(void)
 {
-    while(1)
-    {
-        
-    }
+	APP1_Init();
+	while (1)
+	{
+		APP1_System();
+	}
+
+
 }

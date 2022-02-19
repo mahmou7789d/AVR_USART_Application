@@ -6,7 +6,7 @@
  */ 
 
 #include <USART_File.h>
-
+#include <util/delay.h>
 
 /******************************************************* USART Call Back Functions *********************************************************/
 
@@ -59,7 +59,7 @@ ISR (USART_UDRE_vect)
 }		
 
 /******************************************************************************/
-USART_Configuration USART0={0};
+USART_Configuration USART0;
 
 
 
@@ -251,6 +251,19 @@ void USART_Send_ByteOfData_Blocking(uint_16 Data)
 		UCSRB = (UCSRB & 0xFE) | ((Data & (1<<8))>>8);
 	}
 	UDR = (uint_8) Data;
+}
+void USART_Send_String(uint_8* Data_Ptr)
+{
+	while( *Data_Ptr != 0)
+	{
+		USART_Send_ByteOfData_Blocking(*Data_Ptr);
+		Data_Ptr++;
+		_delay_ms(100);
+	}
+}
+void USART_Send_LCD_Command(uint_8* Cmd_Ptr)
+{
+	
 }
 void USART_Send_ByteOfData_NonBlocking(uint_16 Data) // Don't wait UDER to be empty
 {

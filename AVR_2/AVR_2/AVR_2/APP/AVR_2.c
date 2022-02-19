@@ -6,12 +6,12 @@
  */ 
 
 
-#include <USART_File.h>
-#include <LCD.h>
-#include <LED.h>
+#include <APP_2.h>
 
 int main(void)
 {
+	APP2_Init();
+	APP2_System();
     while(1)
     {
         

@@ -6,7 +6,7 @@
  */ 
 
 #include <USART_File.h>
-
+#include <util/delay.h>
 
 /******************************************************* USART Call Back Functions *********************************************************/
 
@@ -237,7 +237,6 @@ void USART_Init(void)
 	UCSRC =UCSRC_Temp;
 	UCSRB =UCSRB_Temp;//put in the last because on it the enable bit of the UART
 }
-
 void USART_Send_ByteOfData_Blocking(uint_16 Data)
 {
 	while (READ_BIT(UCSRA,UDRE)==0);
@@ -252,6 +251,16 @@ void USART_Send_ByteOfData_Blocking(uint_16 Data)
 	}
 	UDR = (uint_8) Data;
 }
+void USART_Send_String(uint_8* Data_Ptr)
+{
+	while( *Data_Ptr != 0)
+	{
+		USART_Send_ByteOfData_Blocking(*Data_Ptr);
+		Data_Ptr++;
+		_delay_ms(100); 
+	}
+}
+
 void USART_Send_ByteOfData_NonBlocking(uint_16 Data) // Don't wait UDER to be empty
 {
 	if(READ_BIT(UCSRA,UDRE)!=0)

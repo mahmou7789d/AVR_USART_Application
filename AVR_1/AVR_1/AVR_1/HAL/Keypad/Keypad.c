@@ -23,10 +23,10 @@ void   keypad_Init (Keypad_Data Keypad)
 }
 unsigned char keypad_Read(Keypad_Data Keypad)
 {
-	unsigned char Keypad_array[COL_Max][ROW_Max]= {{'7','8','9','A'},
-	                                        {'4','5','6','B'},
-	                                        {'1','2','3','C'},
-	                                        {'#','0','*','D'}};
+	unsigned char Keypad_array[COL_Max][ROW_Max]= {{'7','8','9','/'},
+	                                               {'4','5','6','*'},
+	                                               {'1','2','3','-'},
+	                                               {'#','0','=','+'}};
 	unsigned char Row,Col,Read_Value;
 	unsigned char Return_Value = 0xff;
 	for (Row=0;Row<ROW_Max;Row++)

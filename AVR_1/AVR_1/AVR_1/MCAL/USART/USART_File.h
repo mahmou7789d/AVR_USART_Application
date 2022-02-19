@@ -97,7 +97,8 @@ void USART_Send_ByteOfData_Blocking(uint_16 Data);
 void USART_Send_ByteOfData_NonBlocking(uint_16 Data);
 uint_16 USART_Receive_ByteOfData_Blocking();
 uint_16 USART_Receive_ByteOfData_NonBlocking();
-
+void USART_Send_String(uint_8* Data_Ptr);
+void USART_Send_LCD_Command(uint_8* Cmd_Ptr);
 void USART_RXC_Complete_Callback(void (*USART_RXC_Complete_User_ptr) (void));
 void USART_TXC_Complete_Callback(void (*USART_TXC_Complete_User_ptr) (void));
 void USART_UDRE_Callback(void (*USART_UDRE_User_ptr) (void));
